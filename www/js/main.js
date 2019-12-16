@@ -50,13 +50,14 @@ var BB = {
             [null,      null,       'red',      'red',       null,       null,       null,       'silver',   'silver',   null],    
             [null,      null,       null,       'red',      'red',       null,       'silver',   'silver',   null,       null],    
             [null,      null,       null,       null,       'silver',   'silver',   'silver',   null,       null,       null],
-            [null,      null,       null,       null,       null,       'silver',   null,       null,       null,       null]
+            [null,      null,       null,       null,       null,       'silver',   null,       null,       null,       null],
+            [null,      null,       null,       null,       'red',      'red',     'red', ]  
         ];
         
         for(j = 0; j < blockMap.length; j++) {
             for(i = 0; i < blockMap[j].length; i++) {
                 if(blockMap[j][i] !== null) {
-                    var block = BB.addBlock(10 + (30 * i), 80 + (12 * j), blockMap[j][i]);
+                    var block = BB.addBlock(5 + (30 * i), 80 + (12 * j), blockMap[j][i]);
                 }
             }
         }
@@ -95,7 +96,7 @@ var BB = {
         block.position.x = x;
         block.position.y = y;
         
-        block.width = 30;
+        block.width = 12;
         block.height = 12;
         
         block.point = point;

@@ -42,22 +42,25 @@ var BB = {
     // Create blocks map
     setMap: function() {
         var blockMap = [
-            [null,      null,       null,       null,       null,       'blue',     null,       null,       null,       null],
-            [null,      null,       null,       null,       'red',      'red',      'blue',     null,       null,       null],
-            [null,      null,       null,       'red',      'red',      null,       null,       'blue',     null,       null],
-            [null,      null,       'red',      'red',      null,       null,       null,       null,       'blue',     null],    
-            [null,      'red',      'red',      null,       null,       'gold',     null,       null,       'silver',   'silver'],    
-            [null,      null,       'red',      'red',       null,       null,       null,       'silver',   'silver',   null],    
-            [null,      null,       null,       'red',      'red',       null,       'silver',   'silver',   null,       null],    
-            [null,      null,       null,       null,       'silver',   'silver',   'silver',   null,       null,       null],
-            [null,      null,       null,       null,       null,       'silver',   null,       null,       null,       null],
-            [null,      null,       null,       null,       'red',      'red',     'red', ]  
+            [null,null,null,null,null,null,null,null,null,null,null,null,'red','red','red','red','red'],
+            [null,null,null,null,null,null,null,null,null,null,null,'red','red','red','red','red','red','red'],
+            [null,null,null,null,null,null,null,null,null,null,'red','red','red','red','red','red','red','red','red'],
+            [null,null,null,null,null,null,null,null,null,'red','red','red','red','red','red','red','red','red','red','red',],    
+            [null,null,null,null,null,null,null,null,'red','red','red','red','red','red','red','red','red','red','red','red','red',],    
+            [null,null,null,null,null,null,null,null,'red','red','red','red','red','red','red','red','red','red','red','red','red',],    
+            [null,null,null,null,null,null,null,null,'red','red','red','red','red','red','red','red','red','red','red','red','red',],    
+            [null,null,null,null,null,null,null,null,],    
+            [null,null,null,null,null,null,null,null,"silver","silver","silver","silver","silver","silver","silver","silver","silver","silver","silver","silver","silver",],
+            [null,null,null,null,null,null,null,null,null,"silver","silver","silver","silver","silver","silver","silver","silver","silver","silver","silver",],
+            [null,null,null,null,null,null,null,null,null,null,"silver","silver","silver","silver","silver","silver","silver","silver","silver",],
+            [null,null,null,null,null,null,null,null,null,null,null,"silver","silver","silver","silver","silver","silver","silver",],
+            [null,null,null,null,null,null,null,null,null,null,null,null,"silver","silver","silver","silver","silver",]  
         ];
         
         for(j = 0; j < blockMap.length; j++) {
             for(i = 0; i < blockMap[j].length; i++) {
                 if(blockMap[j][i] !== null) {
-                    var block = BB.addBlock(5 + (30 * i), 80 + (12 * j), blockMap[j][i]);
+                    var block = BB.addBlock(5 + (12 * i), 40 + (12 * j), blockMap[j][i]);
                 }
             }
         }
@@ -96,8 +99,8 @@ var BB = {
         block.position.x = x;
         block.position.y = y;
         
-        block.width = 12;
-        block.height = 12;
+        block.width = 6;
+        block.height = 6;
         
         block.point = point;
      
@@ -118,8 +121,8 @@ var BB = {
         ball.position.x = parseInt(BB.renderer.width * 0.5);
         ball.position.y = 200;
         
-        ball.width = 10;
-        ball.height = 10;
+        ball.width = 6;
+        ball.height = 6;
         
         ball.delta = {
             'x' : Math.random() - 0.5,

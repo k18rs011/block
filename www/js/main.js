@@ -42,19 +42,21 @@ var BB = {
     // Create blocks map
     setMap: function() {
         var blockMap = [
-            [null,null,null,null,null,null,null,null,null,null,null,null,'red','red','red','red','red'],
-            [null,null,null,null,null,null,null,null,null,null,null,'red','red','red','red','red','red','red'],
-            [null,null,null,null,null,null,null,null,null,null,'red','red','red','red','red','red','red','red','red'],
-            [null,null,null,null,null,null,null,null,null,'red','red','red','red','red','red','red','red','red','red','red',],    
-            [null,null,null,null,null,null,null,null,'red','red','red','red','red','red','red','red','red','red','red','red','red',],    
-            [null,null,null,null,null,null,null,null,'red','red','red','red','red','red','red','red','red','red','red','red','red',],    
-            [null,null,null,null,null,null,null,null,'red','red','red','red','red','red','red','red','red','red','red','red','red',],    
-            [null,null,null,null,null,null,null,null,],    
-            [null,null,null,null,null,null,null,null,"silver","silver","silver","silver","silver","silver","silver","silver","silver","silver","silver","silver","silver",],
-            [null,null,null,null,null,null,null,null,null,"silver","silver","silver","silver","silver","silver","silver","silver","silver","silver","silver",],
-            [null,null,null,null,null,null,null,null,null,null,"silver","silver","silver","silver","silver","silver","silver","silver","silver",],
-            [null,null,null,null,null,null,null,null,null,null,null,"silver","silver","silver","silver","silver","silver","silver",],
-            [null,null,null,null,null,null,null,null,null,null,null,null,"silver","silver","silver","silver","silver",]  
+            [null,null,null,null,null,null,null,null,null,null,null,null,'red','red','red','red','red','red'],
+            [null,null,null,null,null,null,null,null,null,null,'red','red','red','red','red','red','red','red','red','red'],
+            [null,null,null,null,null,null,null,null,null,'red','red','red','red','red','red','red','red','red','red','red','red'],        
+            [null,null,null,null,null,null,null,null,'red','red','red','red','red','red','red','red','red','red','red','red','red','red'],    
+            [null,null,null,null,null,null,null,null,'red','red','red','red','red','red','red','red','red','red','red','red','red','red'],    
+            [null,null,null,null,null,null,null,],
+            [null,null,null,null,null,null,null,null,null,null,null,null,null,'silver','silver','silver','silver',],  
+            [null,null,null,null,null,null,null,null,null,null,null,null,null,'silver','silver','silver','silver',],  
+            [null,null,null,null,null,null,null,null,null,null,null,null,null,'silver','silver','silver','silver',],  
+            [null,null,null,null,null,null,null,],      
+            [null,null,null,null,null,null,null,null,"silver","silver","silver","silver","silver","silver","silver","silver","silver","silver","silver","silver","silver","silver",],
+            [null,null,null,null,null,null,null,null,"silver","silver","silver","silver","silver","silver","silver","silver","silver","silver","silver","silver","silver","silver",],
+            [null,null,null,null,null,null,null,null,null,"silver","silver","silver","silver","silver","silver","silver","silver","silver","silver","silver","silver",],
+            [null,null,null,null,null,null,null,null,null,null,null,"silver","silver","silver","silver","silver","silver","silver","silver",],
+            [null,null,null,null,null,null,null,null,null,null,null,null,"silver","silver","silver","silver","silver",'silver',]  
         ];
         
         for(j = 0; j < blockMap.length; j++) {
@@ -76,6 +78,7 @@ var BB = {
         switch (color) {
             case "red":
             case "blue":
+            case 'white':
                 var point = SETTINGS_POINT;
                 break;
             case "silver":
@@ -93,8 +96,8 @@ var BB = {
         var texture = PIXI.Texture.fromImage(imgPath["block_" + color], false);
         var block = new PIXI.Sprite(texture);
      
-        block.anchor.x = 0.5;
-        block.anchor.y = 0.5;
+        block.anchor.x = 0.1;
+        block.anchor.y = 0.1;
      
         block.position.x = x;
         block.position.y = y;
